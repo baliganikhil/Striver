@@ -262,7 +262,7 @@
 	font-style: italic;
 }
 
-#help_panel, #high_score_panel {
+#help_panel, #high_score_panel, #options_panel {
 	border: dotted 1px silver;
 	display: none;
 }

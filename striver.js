@@ -24,14 +24,14 @@ $(document).ready(function() {
 		}
 	});
 
-	console.log(score_map)
+	console.log(score_map);
 
 	score_map_keys = Object.keys(score_map);
 	$(score_map_keys).each(function(key, value) {
 		score_map_keys[key] = parseInt(value, 10);
 	});
 
-	score_map_keys.sort(function(a,b){return b - a});
+	score_map_keys.sort(function(a,b){return b - a;});
 
 	$(score_map_keys).each(function(key, value) {
 		$('#hall_of_fame_names').append('<tr><td>' + value + '</td><td>' + (score_map[value]).toLocaleString().replace(/,/g, '<br>') + '</td></tr>');
@@ -136,14 +136,26 @@ function glow_button(btn_name) {
 }
 
 function get_next_pattern() {
-	var x = getRandomInt(1, 4);
-	game_pattern.push(x);
+	var mode = $('.striver_game_mode:checked').val();
+	if (mode == 2) {
+		var count = game_pattern.length + 1;
+		game_pattern.length = 0;
 
-	var btn_name = "";
+		for (var i = 0; i < count; i++) {
+			var x = getRandomInt(1, 4);
+			game_pattern.push(x);
+		}
 
-	btn_name = get_colour_for_number(x);
+	} else {
+		var x = getRandomInt(1, 4);
+		game_pattern.push(x);
+		// var btn_name = "";
+		// btn_name = get_colour_for_number(x);
+	}
 
-	//glow_button(btn_name);
+	
+
+	
 }
 
 function get_colour_for_number(number) {
@@ -171,16 +183,16 @@ function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-$('#close_help').live('click', function() {
-	$('#help_panel').slideUp();
+$('.close_panel').live('click', function() {
+	$(this).closest('.striver_panel').slideUp();
 });
 
 $('#btn_help').live('click', function() {
 	$('#help_panel').slideDown();
 });
 
-$('#close_high_score').live('click', function() {
-	$('#high_score_panel').slideUp();
+$('#btn_options').live('click', function() {
+	$('#options_panel').slideDown();
 });
 
 $('#save_player').live('click', function() {

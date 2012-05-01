@@ -10,7 +10,7 @@
 <div class="container">
 	<div id="header"><span class="big_heading">Striver Online</span></div>
 
-	<div id="help_panel">
+	<div id="help_panel" class="striver_panel">
 		<div class="slate_black"><span class="side_heading"> &nbsp;Help</span></div>
 
 		<span>This is an online version of a game (Striver) I had written long back in VB6.<p>
@@ -27,18 +27,31 @@
 		 Want to Contribute? See it on <a href="https://github.com/baliganikhil/Striver">Github</a>
 		</span>
 
-		 <div style="text-align: center;"><button class="begin_game slate_black" id="close_help">Close</button></div>
+		 <div style="text-align: center;"><button class="begin_game slate_black close_panel">Close</button></div>
 	</div>
 
-	<div id="high_score_panel">
+	<div id="high_score_panel" class="striver_panel">
 		<div class="slate_black"><span class="side_heading"> &nbsp;You rock!</span></div>
 
 		<div id="get_player_data">
 			Congratulations! You made it to the Hall of Fame. Since you can remember so well, allow us to remember you!
 			<p>
-			Enter your name: <input type="text" id="player_name"> 
+			Enter your name: <input type="text" id="player_name"> <p>
 			<button class="begin_game slate_black" id="save_player">Save</button>
-			<button class="begin_game slate_black" id="close_high_score">Close</button>
+			<button class="begin_game slate_black close_panel">Close</button>
+		</div>
+	</div>
+
+	<div id="options_panel" class="striver_panel">
+		<div class="slate_black"><span class="side_heading"> &nbsp;Options!</span></div>
+		<div>
+			<p>Game Mode: <p>
+			<input type="radio" name="striver_game_mode" class="striver_game_mode" value="1" checked> <strong>Mode 1</strong> - The sequence grows longer adding one new at the end<p>
+
+			<input type="radio" name="striver_game_mode" class="striver_game_mode" value="2"> <strong>Mode 2</strong> - The sequence grows longer where every element is newer each time<p>
+
+			<button class="begin_game slate_black" id="save_options">Save</button>
+			<button class="begin_game slate_black close_panel">Close</button>
 		</div>
 	</div>
 
@@ -59,6 +72,7 @@
 			</div>
 			<div>
 				<button id="btn_begin_game" class="begin_game slate_black">Begin Game!</button>
+				<button id="btn_options" class="begin_game slate_black">Options</button>
 				<button id="btn_help" class="begin_game slate_black">Help</button>
 			</div>	
 		</div>
