@@ -8,34 +8,7 @@ var currently_glowing_button = 0;
 var game_in_progress = false;
 
 $(document).ready(function() {
-	var high_scores = localStorage.getItem('striver_high_scores');
-	high_scores = JSON.parse(high_scores);
-	var score_map = {};
-
-	if (high_scores === null || high_scores === "" || high_scores === undefined) {
-		return;
-	}
-
-	$(high_scores).each(function(key, value) {
-		if (score_map[value["score"]] === undefined) {
-			score_map[value["score"]] = [value["name"]];
-		} else {
-			score_map[value["score"]].push(value["name"]);
-		}
-	});
-
-	console.log(score_map);
-
-	score_map_keys = Object.keys(score_map);
-	$(score_map_keys).each(function(key, value) {
-		score_map_keys[key] = parseInt(value, 10);
-	});
-
-	score_map_keys.sort(function(a,b){return b - a;});
-
-	$(score_map_keys).each(function(key, value) {
-		$('#hall_of_fame_names').append('<tr><td>' + value + '</td><td>' + (score_map[value]).toLocaleString().replace(/,/g, '<br>') + '</td></tr>');
-	});
+	get_high_scores();
 });
 
 $('#btn_begin_game').live('click', function(event) {
@@ -199,18 +172,40 @@ $('#save_player').live('click', function() {
 	var high_scores = localStorage.getItem('striver_high_scores');
 	high_scores = JSON.parse(high_scores);
 	var player_name = $('#player_name').val().trim();
-	var score = number_buttons_pressed.toLocaleString();
-	var score_map = {};
-
+	var score = game_pattern.length.toLocaleString();
+	
 	if (player_name === "")  {
 		player_name = "Anon";
 	}
 
-	if (score_map[score] === "" || score_map[score] === null || score_map[score] === undefined) {
-		high_scores.push({"score": score, "name": player_name});
+	if (high_scores[score] === "" || high_scores[score] === null || high_scores[score] === undefined) {
+		high_scores[score] = [player_name];
 	} else {
-		//high_scores
+		high_scores[score].push(player_name);
 	}
 
 	localStorage.setItem('striver_high_scores', JSON.stringify(high_scores));
+	get_high_scores();
+	$(this).closest('.striver_panel').slideUp();
 });
+
+function get_high_scores() {
+	var high_scores = localStorage.getItem('striver_high_scores');
+	high_scores = JSON.parse(high_scores);
+
+	if (high_scores === null || high_scores === "" || high_scores === undefined) {
+		return;
+	}
+
+	high_scores_keys = Object.keys(high_scores);
+
+	$(high_scores_keys).each(function(key, value) {
+		high_scores_keys[key] = parseInt(value, 10);
+	});
+
+	high_scores_keys.sort(function(a,b){return b - a;});
+
+	$(high_scores_keys).each(function(key, value) {
+		$('#hall_of_fame_names').append('<tr><td>' + value + '</td><td>' + (high_scores[value]).toLocaleString().replace(/,/g, '<br>') + '</td></tr>');
+	});
+}
