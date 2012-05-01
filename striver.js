@@ -69,7 +69,6 @@ function show_current_pattern() {
 }
 
 function glow_next_btn() {
-	console.log("Loading " + currently_glowing_button);
 	glow_button(get_colour_for_number(game_pattern[currently_glowing_button++]));
 
 	if (currently_glowing_button == game_pattern.length) {
@@ -172,10 +171,14 @@ $('#save_player').live('click', function() {
 	var high_scores = localStorage.getItem('striver_high_scores');
 	high_scores = JSON.parse(high_scores);
 	var player_name = $('#player_name').val().trim();
-	var score = game_pattern.length.toLocaleString();
+	var score = (game_pattern.length -1).toLocaleString();
 	
 	if (player_name === "")  {
 		player_name = "Anon";
+	}
+
+	if (high_scores === null) {
+		high_scores = {};
 	}
 
 	if (high_scores[score] === "" || high_scores[score] === null || high_scores[score] === undefined) {
