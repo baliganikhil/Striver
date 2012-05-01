@@ -207,6 +207,7 @@ function get_high_scores() {
 	});
 
 	high_scores_keys.sort(function(a,b){return b - a;});
+	$('#hall_of_fame_names').html('');
 
 	$(high_scores_keys).each(function(key, value) {
 		$('#hall_of_fame_names').append('<tr><td>' + value + '</td><td>' + (high_scores[value]).toLocaleString().replace(/,/g, '<br>') + '</td></tr>');
