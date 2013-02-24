@@ -5,6 +5,8 @@ var game_pattern = [];
 var number_buttons_pressed = 0;
 var currently_glowing_button = 0;
 
+timer_value = 1000;
+
 var game_in_progress = false;
 
 $(document).ready(function() {
@@ -32,6 +34,11 @@ $('.striver_button').live('click', function() {
 
 	if (game_pattern.length == number_buttons_pressed) {
 		$('.current_score').text(number_buttons_pressed);
+
+		if (game_pattern.length % 5 == 0) {
+			timer_value -= 20;
+		}
+
 		number_buttons_pressed = 0;
 		get_next_pattern();
 		show_current_pattern();
@@ -49,6 +56,8 @@ function begin_game() {
 	currently_glowing_button = 0;
 
 	$('.current_score').text('0');
+	
+	timer_value = 1000;
 
 	get_next_pattern();
 	show_current_pattern();
@@ -65,7 +74,7 @@ function game_over() {
 function show_current_pattern() {
 	currently_glowing_button = 0;
 	game_in_progress = false;
-	setInterval_id_reducing_no = setInterval (glow_next_btn, 1000);
+	setInterval_id_reducing_no = setInterval (glow_next_btn, timer_value);
 }
 
 function glow_next_btn() {
