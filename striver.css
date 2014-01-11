@@ -1,17 +1,25 @@
+body {
+	font-family: helvetica;
+}
+
 #red {
 	border-radius: 250px 0 0 0;
+	border: solid 1px #fff;
 }
 
 #green {
 	border-radius: 0 0 0 250px;
+	border: solid 1px #fff;
 }
 
 #blue {
 	border-radius: 0 0 250px 0;
+	border: solid 1px #fff;
 }
 
 #yellow {
 	border-radius: 0 250px 0 0 ;	
+	border: solid 1px #fff;
 }
 
 .red_normal {
@@ -199,14 +207,13 @@
 
 .slate_black {
 	color: #FFF;
-	background: #45484d; /* Old browsers */
-	background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
-	background: linear-gradient(top, #45484d 0%,#000000 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	background: #222;
+	border: solid 1px #222;
+}
+
+.slate_black:hover {
+	background: #444;
+	cursor: pointer;
 }
 
 .begin_game {
@@ -267,8 +274,8 @@
 	display: none;
 }
 
-#help_panel > span {
-	padding: 5px;
+#help_panel p {
+	font-size: 14px;
 }
 
 #get_player_data {
