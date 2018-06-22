@@ -1,13 +1,11 @@
-var setInterval_id_loading_no = 0;
-var setInterval_id_reducing_no = 0;
-var game_pattern = [];
+var setInterval_id_loading_no = 0,
+	setInterval_id_reducing_no = 0,
+	game_pattern = [],
+	number_buttons_pressed = 0,
+	currently_glowing_button = 0,
 
-var number_buttons_pressed = 0;
-var currently_glowing_button = 0;
-
-timer_value = 1000;
-
-var game_in_progress = false;
+	timer_value = 1000,
+	game_in_progress = false;
 
 $(document).ready(function() {
 	get_high_scores();
@@ -22,6 +20,8 @@ $('.striver_button').live('click', function() {
 	if (game_in_progress === false) {
 		return;
 	}
+
+	glow_button($(this).data('colour'));
 
 	var btn_value = $(this).data('value');
 	btn_value = parseInt(btn_value, 10);
@@ -56,7 +56,7 @@ function begin_game() {
 	currently_glowing_button = 0;
 
 	$('.current_score').text('0');
-	
+
 	timer_value = 1000;
 
 	get_next_pattern();
@@ -134,9 +134,9 @@ function get_next_pattern() {
 		// btn_name = get_colour_for_number(x);
 	}
 
-	
 
-	
+
+
 }
 
 function get_colour_for_number(number) {
@@ -181,7 +181,7 @@ $('#save_player').live('click', function() {
 	high_scores = JSON.parse(high_scores);
 	var player_name = $('#player_name').val().trim();
 	var score = (game_pattern.length -1).toLocaleString();
-	
+
 	if (player_name === "")  {
 		player_name = "Anon";
 	}

@@ -18,7 +18,7 @@ body {
 }
 
 #yellow {
-	border-radius: 0 250px 0 0 ;	
+	border-radius: 0 250px 0 0 ;
 	border: solid 1px #fff;
 }
 
@@ -44,17 +44,6 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */
 }
 
-/*#red:hover {
-	background: #ff3019;
-	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
-	background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	background: linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );
-}*/
-
 .blue_normal {
 	background: #258dc8; /* Old browsers */
 	background: -moz-linear-gradient(top, #258dc8 0%, #258dc8 100%); /* FF3.6+ */
@@ -76,17 +65,6 @@ body {
 	background: linear-gradient(top, #88bfe8 0%,#70b0e0 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=0 ); /* IE6-9 */
 }
-
-/*#blue:hover {
-	background: #4096ee;
-	background: -moz-linear-gradient(top, #4096ee 0%, #4096ee 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4096ee), color-stop(100%,#4096ee));
-	background: -webkit-linear-gradient(top, #4096ee 0%,#4096ee 100%);
-	background: -o-linear-gradient(top, #4096ee 0%,#4096ee 100%);
-	background: -ms-linear-gradient(top, #4096ee 0%,#4096ee 100%);
-	background: linear-gradient(top, #4096ee 0%,#4096ee 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=0 );
-}*/
 
 .green_normal {
 	background: #006e2e; /* Old browsers */
@@ -110,17 +88,6 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bba70', endColorstr='#6bba70',GradientType=0 ); /* IE6-9 */
 }
 
-/*#green:hover {
-	background: #299a0b;
-	background: -moz-linear-gradient(top, #299a0b 0%, #299a0b 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#299a0b), color-stop(100%,#299a0b));
-	background: -webkit-linear-gradient(top, #299a0b 0%,#299a0b 100%);
-	background: -o-linear-gradient(top, #299a0b 0%,#299a0b 100%);
-	background: -ms-linear-gradient(top, #299a0b 0%,#299a0b 100%);
-	background: linear-gradient(top, #299a0b 0%,#299a0b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#299a0b', endColorstr='#299a0b',GradientType=0 );
-}*/
-
 .yellow_normal {
 		background: #eab92d; /* Old browsers */
 	background: -moz-linear-gradient(top, #eab92d 0%, #c79810 100%); /* FF3.6+ */
@@ -143,17 +110,6 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 ); /* IE6-9 */
 }
 
-/*#yellow:hover {
-	background: #ffd65e;
-	background: -moz-linear-gradient(top, #ffd65e 0%, #febf04 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd65e), color-stop(100%,#febf04));
-	background: -webkit-linear-gradient(top, #ffd65e 0%,#febf04 100%);
-	background: -o-linear-gradient(top, #ffd65e 0%,#febf04 100%);
-	background: -ms-linear-gradient(top, #ffd65e 0%,#febf04 100%);
-	background: linear-gradient(top, #ffd65e 0%,#febf04 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
-}*/
-
 .button_row {
 	margin-top: 10px;
 }
@@ -162,6 +118,7 @@ body {
 	height: 150px;
 	width: 150px;
 	margin-left: 10px;
+	cursor: pointer;
 }
 
 .container {
@@ -235,17 +192,22 @@ body {
 
 .side_heading {
 	font-size: 32px;
+	padding: 10px;
+	display: block;
 	color: white;
 }
 
 .current_score {
 	font-size: 72px;
-
+	display: block;
+	margin-top: 8px;
+	margin-bottom: 5px;
 }
 
 .hall_of_fame {
 	border: dotted 1px silver;
-	
+	padding: 10px;
+
 	background: rgb(242,245,246); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(100%,rgba(200,215,220,1))); /* Chrome,Safari4+ */
@@ -275,7 +237,14 @@ body {
 }
 
 #help_panel p {
-	font-size: 14px;
+	font-size: 16px;
+	line-height: 22px;
+	color: #444;
+}
+
+#help_panel .help_title {
+	font-size: 24px;
+	padding: 10px;
 }
 
 #get_player_data {
@@ -287,4 +256,18 @@ body {
 	height: 30px;
 	width: 300px;
 	color: gray;
+}
+
+.btn {
+	background: #eee;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+}
+
+#btn_begin_game {
+	border-radius: 3px;
+}
+
+.options_contents {
+	padding: 10px;
 }

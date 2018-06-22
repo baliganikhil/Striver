@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Striver Online: By Nikhil Baliga</title>
+	<link rel="stylesheet" type="text/css" href="css/striver.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div id="header"><span class="big_heading">Striver Online</span></div>
+
+		<div id="help_panel" class="striver_panel">
+			<div class="slate_black help_title">Help</div>
+
+			<div style="padding: 10px;">
+			<p>This is an online version of a game (Striver) I had written long back in VB6.<p>
+
+			The game is a clone of the classic 'Simon Says' game. The objective is simple. When you click on
+			Begin Game, the coloured blocks glow in a pattern. You have to memorise the pattern, and click them in
+			 the same sequence.<p>
+
+			 The more you get them right, the longer the sequence gets. It's harder than it seems. Go ahead, give it
+			 a shot.<p>
+
+			 Lots of other features and game levels and difficulties are coming soon. Stay tuned<p>
+
+			 Want to Contribute? See it on <a href="https://github.com/baliganikhil/Striver">Github</a>
+
+			 <div style="text-align: center;"><button class="begin_game slate_black close_panel">Close</button></div>
+			</div>
+		</div>
+
+		<div id="high_score_panel" class="striver_panel">
+			<div class="slate_black"><span class="side_heading"> &nbsp;You rock!</span></div>
+
+			<div id="get_player_data">
+				Congratulations! You made it to the Hall of Fame. Since you can remember so well, allow us to remember you!
+				<p>
+				Enter your name: <input type="text" id="player_name"> <p>
+				<button class="begin_game slate_black" id="save_player">Save</button>
+				<button class="begin_game slate_black close_panel">Close</button>
+			</div>
+		</div>
+
+		<div id="options_panel" class="striver_panel">
+			<div class="slate_black"><span class="side_heading"> &nbsp;Options</span></div>
+			<div class="options_contents">
+				<p>Game Mode: <p>
+				<input type="radio" name="striver_game_mode" class="striver_game_mode" value="1" checked> <strong>Mode 1</strong> - The sequence grows longer adding one new at the end<p>
+
+				<input type="radio" name="striver_game_mode" class="striver_game_mode" value="2"> <strong>Mode 2</strong> - The sequence grows longer where every element is newer each time<p>
+
+				<!--button class="begin_game slate_black" id="save_options">Save</button-->
+				<button class="begin_game slate_black close_panel">Close</button>
+			</div>
+		</div>
+
+		<div class="game_panel">
+			<div class="game_frame game_frame_main">
+				<div id="play_area" class="transparent">
+					<div class="button_row">
+						<button id="red" data-colour="red" class="striver_button red_normal" data-value="1"></button>
+						<button id="yellow" data-colour="yellow" class="striver_button yellow_normal" data-value="4"></button>
+					</div>
+
+					<div class="floating_box">3</div>
+
+					<div class="button_row">
+						<button id="green" data-colour="green" class="striver_button green_normal" data-value="2"></button>
+						<button id="blue" data-colour="blue" class="striver_button blue_normal" data-value="3"></button>
+					</div>
+				</div>
+				<div>
+					<button id="btn_begin_game" class="begin_game slate_black">Begin Game!</button>
+					<button id="btn_options" class="begin_game btn">Options</button>
+					<button id="btn_help" class="begin_game btn">Help</button>
+					<!-- <button id="btn_click" class="begin_game btn" onClick="window.location='http://nikhilbaliga.com/games'">More games</button> -->
+				</div>
+			</div>
+
+			<div class="game_frame game_frame_score">
+
+				<div class="slate_black">
+					<span class="side_heading">Score</span>
+				</div>
+
+				<div class="current_score">0</div>
+
+				<div class="hall_of_fame">
+					<span>Hall Of Fame</span>
+				</div>
+
+				<div style="overflow: auto;">
+					<table id="hall_of_fame_names">
+
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/striver.js"></script>
+</body>
+</html>
